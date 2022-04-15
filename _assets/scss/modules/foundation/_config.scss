@@ -1,0 +1,110 @@
+@use "../variables/variables";
+@use "../mixin/mixin";
+
+/* ===============================================
+# 文字
+=============================================== */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+  font-size: variables.$f5;
+  line-height: 1.8;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  color: variables.$color;
+}
+
+h1 {
+  font-size: variables.$f1;
+  // letter-spacing:normal ;
+  // font-weight: 500;
+  color: variables.$color;
+}
+
+h2 {
+  font-size: variables.$f2;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  color: variables.$color;
+  // テーマ
+  border-left: solid 14px variables.$basecolor;
+  padding-left: 14px;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: variables.$f3;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  color: variables.$color;
+}
+
+h4 {
+  font-size: variables.$f4;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  color: variables.$color;
+}
+
+h5 {
+  font-size: variables.$f5;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  color: variables.$color;
+}
+
+h6 {
+  font-size: variables.$f6;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  color: variables.$color;
+}
+
+a {
+  font-size: variables.$f5;
+  line-height: 1.8;
+  text-decoration: none;
+  // letter-spacing: normal;
+  // font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
+  @include mixin.touch {
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* ========================================
+# リストスタイル
+======================================== */
+li {
+  list-style: none;
+}
+
+/* ========================================
+# bodyタグ、htmlタグ
+======================================== */
+html{
+  font-size: 16px;
+
+  @include mixin.pad {
+    font-size: 14px;
+  }
+  @include mixin.mobile {
+    font-size: 13px;
+  }
+}
+
+body {
+  margin: 0;
+  // モーダル展開時など想定
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
