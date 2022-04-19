@@ -1,0 +1,39 @@
+{
+  "siteInfo": {
+    "name": "DIGSMILE",
+    "siteUrl": "./index.html"
+  },
+  "pages":{
+    "home": {
+      "name": "DIGSMILE",
+      "description": "DIGSMILEは、デザインで人を笑顔にする会社。笑顔には世界を変える力がある、デザインには人を幸せにする力があるという想いが込められています。",
+      "url": "index.html"
+    },
+    "about":{
+      "name": "ABOUT US",
+      "description": "企業説明",
+      "url":"about.html"
+    },
+    "works": {
+      "name": "WORKS",
+      "description": "制作実績を紹介します。",
+      "url":"works.html"
+    },
+    "culture": {
+      "name": "CULTURE",
+      "description": "社内文化について紹介します。",
+      "url":"culture.html"
+    },
+    "topics": {
+      "name": "TOPICS",
+      "description": "活動実績をブログにしています。",
+      "url":"topics.html"
+    },
+    "contact": {
+      "name": "CONTACT",
+      "description": "お気軽にご相談ください。",
+      "url":"contact.html"
+    }
+  }
+
+}

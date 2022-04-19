@@ -12,14 +12,21 @@ const autoprefixer = require("gulp-autoprefixer"); //ベンダープレフィッ
 // const postcss = require("gulp-postcss");css-mqpackerを使うために必要
 // const mqpacker = require('css-mqpacker');//メディアクエリをまとめる（意図しないスタイルの上書きを防ぐため、デフォルトでは無効化しています）
 
+// EJS
+const ejs = require("gulp-ejs");//ejs本体
+const htmlbeautify = require("gulp-html-beautify");//htmlコンパイル時の整形モジュール
+const rename = require("gulp-rename");//拡張子変更モジュール
+const fs = require("fs");//ejsでjsonを利用するモジュール
+
 //画像圧縮
 const imagemin = require("gulp-imagemin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
 const imageminSvgo = require("imagemin-svgo");
+const { src } = require("gulp");
 
 /**
- * clean
+ * 出力先をclean（ファイル削除
  */
 const clean = () => {
   return del([distBase + "/**"], {
@@ -35,28 +42,29 @@ const TARGET_BROWSERS = [
 
 // 入出力するフォルダを指定
 const srcBase = "../"; // ルートディレクトリ（のちに記載するgulp.watchの監視対象）
-const assetsBase = "../_assets";// コンパイル元データの保存場所
+const assetsBase = "../_assets"; // コンパイル元データの保存場所
 const distBase = "../"; // ルートディレクトリに出力（コンパイルの出力先）
 
 const srcPath = {
   scss: assetsBase + "/scss/**/*.scss",
   img: assetsBase + "/images/**/*",
+  ejs: assetsBase + "/ejs/**/*.ejs",
   html: srcBase + "**/*.html",
   php: srcBase + "**/*.php",
   js: srcBase + "**/*.js",
 };
 
 const distPath = {
-  css: distBase + "/",
+  css: distBase + "/css",
   img: distBase + "/images/",
-  // 'html': distBase + '/',
-  // 'php': distBase + '/',
-  // 'js': distBase + '/js/'
+  ejs: distBase + "/",
+  html: distBase + "/",
+  php: distBase + '/',
+  js: distBase + "/js/",
 };
 
 /**
  * sass
- *
  */
 const cssSass = () => {
   return (
@@ -74,7 +82,7 @@ const cssSass = () => {
       .pipe(autoprefixer(TARGET_BROWSERS)) // ベンダープレフィックス自動付与
       // .pipe(postcss([mqpacker()])) // メディアクエリをまとめる
       .pipe(gulp.dest(distPath.css, { sourcemaps: "./" })) //コンパイル先
-      .pipe(browserSync.stream())
+      .pipe(browserSync.stream())//ブラウザをリロードせずに更新
       .pipe(
         notify({
           message: "Sassをコンパイルしました！",
@@ -83,6 +91,44 @@ const cssSass = () => {
       )
   );
 };
+
+/**
+ * EJS
+ */
+const ejscompile = () => {
+  const json_path ="../_assets/ejs/_data/site.json";
+  const json = JSON.parse(fs.readFileSync(json_path));
+
+  return gulp
+    .src([srcPath.ejs, "!" + assetsBase + "/ejs/**/_*.ejs"]) //ejsはコンパイル、_*.ejsは除外
+    .pipe(
+      plumber({
+        errorHandler: notify.onError("Error:<%= error.message %>"),
+      })
+    ) //エラーが出ても止めない
+    .pipe(ejs({
+      jsonData : json,
+    }
+    ))
+    .pipe(htmlbeautify({
+      indent_size :2,
+      indent_char:" ",
+      max_preserve_newlines:0,
+      preserve_newlines:false,
+      indent_inner_html:false,
+      extra_liners:[],
+    }))
+    .pipe(rename({ extname: ".html" })) //拡張子をhtmlに変更
+    .pipe(gulp.dest(distPath.ejs)) //コンパイル先を指定
+    .pipe(browserSync.stream())//ブラウザをリロードせずに更新
+    .pipe(
+      notify({
+        message: "ejsをhtmlにコンパイルしました！",
+        onLast: true,
+      })
+    );
+};
+
 
 /**
  * 画像圧縮
@@ -114,22 +160,6 @@ const imgImagemin = () => {
 };
 
 /**
- * html（これは単純にsrcPathにあるhtmlをdistPathに吐き出して上書きしてるだけ。ブラウザリロードの監視対象はsrcPath）
- */
-// const html = () => {
-//   return gulp.src(srcPath.html)
-//     .pipe(gulp.dest(distPath.html))
-// }
-
-/**
- * php（これは単純にsrcPathにあるphpをdistPathに吐き出して上書きしてるだけ。ブラウザリロードの監視対象はsrcPath）
- */
-// const php = () => {
-//   return gulp.src(srcPath.php)
-//     .pipe(gulp.dest(distPath.php))
-// }
-
-/**
  * ローカルサーバー立ち上げ
  */
 const browserSyncFunc = () => {
@@ -138,13 +168,13 @@ const browserSyncFunc = () => {
 
 const browserSyncOption = {
   // 静的サイト構築時
-  // server: distBase
+  server: distBase,
   // 動的サイト※接続先はプロジェクトに合わせて書き換える
-  proxy: "http://lessonbook.local/",
+  // proxy: "http://lessonbook.local/",
   // ブラウザシンク起動するか'true''false'
   open: "true",
   watchOptions: {
-    debounceDelay: 3000,
+    debounceDelay: 1000,
   },
   reloadOnRestart: true,
 };
@@ -165,10 +195,10 @@ const browserSyncReload = (done) => {
  */
 const watchFiles = () => {
   gulp.watch(srcPath.scss, gulp.series(cssSass));
-  // jsのみdistpathにあるものを編集するため、distPathを監視
-  gulp.watch(srcPath.js, gulp.series(browserSyncReload));
-  gulp.watch(srcPath.html, gulp.series(browserSyncReload));
-  gulp.watch(srcPath.php, gulp.series(browserSyncReload));
+  gulp.watch(srcPath.ejs, gulp.series(ejscompile));
+  gulp.watch(distPath.js, gulp.series(browserSyncReload)); // distpathにあるものを編集するため、distPathを監視
+  gulp.watch(distPath.html, gulp.series(browserSyncReload)); // distpathにあるものを編集するため、distPathを監視
+  gulp.watch(distPath.php, gulp.series(browserSyncReload)); // distpathにあるものを編集するため、distPathを監視
   gulp.watch(srcPath.img, gulp.series(imgImagemin, browserSyncReload));
 };
 
@@ -177,6 +207,6 @@ const watchFiles = () => {
  * parallelは並列で実行
  */
 exports.default = gulp.series(
-  gulp.parallel(imgImagemin, cssSass),
-  gulp.parallel(watchFiles, browserSyncFunc)
+  gulp.parallel(imgImagemin, cssSass, ejscompile),
+  gulp.parallel(watchFiles, browserSyncFunc),
 );

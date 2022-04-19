@@ -1,8 +1,172 @@
-@use "../variables/variables";
-@use "../mixin/mixin";
+@use "../../variables/variables";
+@use "../../mixin/mixin";
 
 /* ======================================================
-# 
+# HOME(index.html)
 ======================================================= */
+.p-home {
+  $sec: "p-home";
 
+  &-mv {
+    &_bg {
+      ///  デザイン ///
+      width: 100%;
+      height: 100vh;
+      ///  配置 ///
+      display: flex;
+      position: absolute;
+      z-index: -10;
+    }
 
+    &_image {
+      ///  デザイン ///
+      width: calc(100vw * 0.76);
+      height: fit-content;
+      ////薄く影をつける
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.34);
+      }
+      ///  配置 ///
+      z-index: -20;
+      position: relative;
+    }
+
+    &_shadow {
+      ///  デザイン ///
+      width: calc(100vw * 0.5);
+      height: 100vh;
+      background-color: #222;
+      ///  配置 ///
+      position: absolute;
+      margin-left: auto;
+      right: 0;
+      z-index: -30;
+    }
+
+    &_container {
+      ///  デザイン ///
+      @include mixin.container;
+      height: 100vh;
+      ///  配置 ///
+      position: relative;
+    }
+
+    &_textbox {
+      ///  配置 ///
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_subtitle {
+      ///  デザイン ///
+      color: #ffffff;
+      font-weight: bold;
+      ///  配置 ///
+      width: fit-content;
+      span {
+        display: block;
+      }
+    }
+
+    &_title {
+      ///  デザイン ///
+      width: fit-content;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &-about {
+    ////  配置（次セクションの背景に少し被せるため）  ////
+    position: relative;
+    top: 3rem;
+
+    &_container {
+      ///  デザイン ///
+      @include mixin.container;
+      ///  配置 ///
+      margin-top: 4.5rem;
+    }
+    &_inner {
+      ////  デザイン  ////
+      padding-top: 10%;
+      padding-bottom: 10%;
+      background-image: url(../images/home-about-bg.png);
+      background-repeat: repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &_textbox {
+      ////  デザイン  ////
+      width: 53%;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding-top: 3.12rem;
+      padding-bottom: 3.12rem;
+      padding-left: 1.87rem;
+      padding-right: 1.87rem;
+      ////  配置  ////
+      margin-left: 4%;
+    }
+
+    &_title {
+      ////  デザイン  ////
+    }
+
+    &_text {
+      ////  デザイン  ////
+      padding-top: 1.87rem;
+      span {
+        display: block;
+      }
+    }
+
+    &_btn {
+      ////  配置  ////
+      margin-top: 1.87rem;
+    }
+  }
+
+  &-info {
+    background-color: #f0f0f0;
+    &_container {
+      ////  デザイン  ////
+      @include mixin.container;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    &_list {
+      ////  配置  ////
+      display: flex;
+      gap: 60px;
+    }
+
+    &_item {
+    }
+
+    &_title {
+    }
+    &_image {
+      ////  デザイン  ////
+      height: 350px;
+      ////  配置  ////
+      margin-top: 1.87rem;
+    }
+    &_text{
+      margin-top: 1.87rem;
+    }
+    &_btn{
+      margin-top: 1.87rem;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<% let pageId  = 'home' ;%>
+<% function get_link(select){
+  return jsonData.pages[select].url
+}  ;%>
+<!-- ヘッダー -->
+<%- include('./_template/_header',{pageId:pageId}) ;%>
+<!-- MV -->
+<%- include('./_template/_mv',{pageId:pageId}) ;%>
+<!-- ABOUT US -->
+<section class="p-home-about">
+  <div class="p-home-about_container">
+    <div class="p-home-about_inner">
+      <article class="p-home-about_textbox">
+        <h2 class="p-home-about_title">ABOUT US</h2><!-- /.p-home-about_title -->
+        <p class="p-home-about_text">
+          DIGSMILEは、デザインで人を笑顔にする会社。
+          <span>
+            なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
+          </span>
+          DIGSMILEの社名にはそんな想いが込められています。
+        </p><!-- /.p-home-about_text -->
+        <a href="./<%= get_link('about') ;%>" class="p-home-about_btn c-more_btn">READ MORE</a><!-- /.p-home-about_btn -->
+      </article><!-- /.p-home-about_textbox -->
+    </div><!-- /.p-home-about_inner -->
+  </div><!-- /.p-home-about_container -->
+</section><!-- /.p-home-about -->
+<!-- INFO -->
+<section class="p-home-info">
+  <div class="p-home-info_container">
+    <ul class="p-home-info_list">
+      <li class="p-home-info_item">
+        <h2 class="p-home-info_title">WORKS</h2><!-- /.p-home-info_title -->
+        <figure class="p-home-info_image"><img src="./images/home-info-works.png" alt="話し合う人々"></figure><!-- /.p-home-info_image -->
+        <p class="p-home-info_text">DIGSMILEの制作実績を紹介します。</p><!-- /.p-home-info_text -->
+        <a href="./<%= get_link('works') ;%>" class="p-home-info_btn c-more_btn">READ MORE</a><!-- /.p-home-info_btn -->
+      </li><!-- /.p-home-info_item -->
+      <li class="p-home-info_item">
+        <h2 class="p-home-info_title">CULTURE</h2><!-- /.p-home-info_title -->
+        <figure class="p-home-info_image"><img src="./images/home-info-culture.png" alt="夕日に戯れる人々"></figure><!-- /.p-home-info_image -->
+        <p class="p-home-info_text">DIGSMILEの社内文化について紹介します。</p><!-- /.p-home-info_text -->
+        <a href="./<%= get_link('culture') ;%>" class="p-home-info_btn c-more_btn">READ MORE</a><!-- /.p-home-info_btn -->
+      </li><!-- /.p-home-info_item -->
+    </ul><!-- /.p-home-info_works -->
+  </div><!-- /.p-home-info_container -->
+</section><!-- /.p-home-info -->
+<!-- LATEST TOPICS -->
+<section class="p-home-news">
+<div class="p-home-news_container">
+
+</div><!-- /.p-home-news_container -->
+</section><!-- /.p-home-news -->
+
+<!-- フッター -->
+<%- include('./_template/_footer',{pageId:pageId}) ;%>

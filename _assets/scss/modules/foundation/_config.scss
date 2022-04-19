@@ -1,65 +1,62 @@
 @use "../variables/variables";
 @use "../mixin/mixin";
 
+
 /* ===============================================
 # 文字
 =============================================== */
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: variables.$googlefont;
 }
 
 p {
   font-size: variables.$f5;
-  line-height: 1.8;
   // letter-spacing: normal;
-  // font-weight: 500;
-  color: variables.$color;
+  font-weight: 500;
+  color: variables.$black;
+  font-family: variables.$myfont;
 }
 
 h1 {
   font-size: variables.$f1;
   // letter-spacing:normal ;
-  // font-weight: 500;
-  color: variables.$color;
+  font-weight: 800;
+  color: variables.$white;
 }
 
 h2 {
   font-size: variables.$f2;
   // letter-spacing: normal;
-  // font-weight: 500;
-  color: variables.$color;
-  // テーマ
-  border-left: solid 14px variables.$basecolor;
-  padding-left: 14px;
-  margin-bottom: 1rem;
+  font-weight: 800;
+  color: variables.$black;
 }
 
 h3 {
   font-size: variables.$f3;
   // letter-spacing: normal;
-  // font-weight: 500;
-  color: variables.$color;
+  font-weight: 800;
+  color: variables.$white;
 }
 
 h4 {
   font-size: variables.$f4;
   // letter-spacing: normal;
   // font-weight: 500;
-  color: variables.$color;
+  color: variables.$black;
 }
 
 h5 {
   font-size: variables.$f5;
   // letter-spacing: normal;
   // font-weight: 500;
-  color: variables.$color;
+  color: variables.$black;
 }
 
 h6 {
   font-size: variables.$f6;
   // letter-spacing: normal;
   // font-weight: 500;
-  color: variables.$color;
+  color: variables.$black;
 }
 
 a {
@@ -67,7 +64,8 @@ a {
   line-height: 1.8;
   text-decoration: none;
   // letter-spacing: normal;
-  // font-weight: 500;
+  font-weight: 500;
+  color: variables.$white;
   cursor: pointer;
   transition: 0.3s;
   &:hover {
