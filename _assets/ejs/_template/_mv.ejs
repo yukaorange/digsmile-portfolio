@@ -1,16 +1,16 @@
-<sec class="p-<%= pageId ;%>-mv">
+<section class="p-<%= pageId ;%>-mv">
   <div class="p-<%= pageId ;%>-mv_bg">
-    <figure class="p-<%= pageId ;%>-mv_image">
-      <img src="./images/<%= pageId ;%>-mv.png" alt="赤子を抱く女性">
-    </figure><!-- /.p-<%= pageId ;%>-mv-image -->
-    <div class="p-<%= pageId ;%>-mv_shadow">
+    <div class="p-<%= pageId ;%>-mv_image scroll-checkPoint1">
+      <!-- 写真背景の空要素 -->
+    </div><!-- /.p-<%= pageId ;%>-mv-image -->
+    <div class="p-<%= pageId ;%>-mv_shadow scroll-checkPoint2">
       <!-- 灰色の空要素 -->
     </div><!-- /.p-<%= pageId ;%>-mv_bg -->
   </div><!-- /.p-<%= pageId ;%>-mv_bg -->
   <div class="p-<%= pageId ;%>-mv_container">
     <div class="p-<%= pageId ;%>-mv_textbox">
-      <p class="p-<%= pageId ;%>-mv_subtitle">デザインで人を笑顔にする会社<span>DIGSMILE INC.</span></p><!-- /.p-<%= pageId ;%>-mv_subtitle -->
-      <h1 class="p-<%= pageId ;%>-mv_title">DESIGN<span>FOR</span><span>SMILE.</span></h1><!-- /.p-<%= pageId ;%>-mv_title -->
+      <p class="p-<%= pageId ;%>-mv_subtitle"><%- jsonData.pages[pageId].subtitle ;%></p><!-- /.p-<%= pageId ;%>-mv_subtitle -->
+      <h1 class="p-<%= pageId ;%>-mv_title"><%- jsonData.pages[pageId].copy ;%></h1><!-- /.p-<%= pageId ;%>-mv_title -->
     </div><!-- /.p-<%= pageId ;%>-mv_textbox -->
   </div><!-- /.p-<%= pageId ;%>-mv_container -->
-</sec><!-- /.p-<%= pageId ;%>-mv -->
+</section><!-- /.p-<%= pageId ;%>-mv -->

@@ -4,7 +4,19 @@
 /* ===============================================
 #フッター
 =============================================== */
-.footer {
-  $sec: "footer";
-  
+.l-footer {
+  $sec: "l-footer";
+  background-color: #525252;
+
+  &_container {
+    ////  デザイン  ////
+    @include mixin.container;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
+    text-align: center;
+  }
+
+  &_text {
+    color: #fff;
+  }
 }

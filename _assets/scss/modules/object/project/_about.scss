@@ -5,4 +5,269 @@
 # 
 ======================================================= */
 
+.p-about {
+  $sec: "p-about";
+  /* ======================================================
+# メインビュー
+======================================================= */
+  &-mv {
+    &_bg {
+      ////////  デザイン  ////////
+      width: 100%;
+      height: 52vh;
+      ////  配置  ////
+      display: flex;
+      position: absolute;
+      z-index: -10;
+    }
 
+    &_image {
+      ////////  デザイン  ////////
+      width: 76.2%;
+      height: 100%;
+      background-image: url(../images/about-mv.png);
+      background-position: center;
+      background-size: cover;
+      // レスポンシブ →→
+      @include mixin.pad {
+        width: 78%;
+      }
+      //薄く影をつける
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.34);
+      }
+      ////  配置  ////
+      z-index: -20;
+      position: relative;
+    }
+
+    &_shadow {
+      ////////  デザイン  ////////
+      width: 54%;
+      height: 62.7vh;
+      background-color: #222;
+      // レスポンシブ →→
+      @include mixin.pad {
+        width: 73%;
+      }
+      ////  配置  ////
+      position: absolute;
+      right: 0;
+      z-index: -30;
+    }
+
+    &_container {
+      ////////  デザイン  ////////
+      @include mixin.container;
+      height: 62.7vh;
+      ////  配置  ////
+      position: relative;
+    }
+
+    &_textbox {
+      ////  配置  ////
+      position: absolute;
+      right: 1%;
+      top: 45.5%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column-reverse;
+      // レスポンシブ →→
+      @include mixin.pad {
+        right: 9.2%;
+        top: 43.8%;
+      }
+      @include mixin.mobile {
+        right: 3.8%;
+        top: 43%;
+      }
+    }
+
+    &_subtitle {
+      ////////  デザイン  ////////
+      color: #ffffff;
+      font-weight: bold;
+      font-family: variables.$myfont;
+      line-height: 1.8;
+      font-size: 1.25rem;
+      // レスポンシブ →→
+      @include mixin.pad {
+        font-size: 1rem;
+      }
+      @include mixin.mobile {
+        font-size: 1.2rem;
+      }
+      ////  配置  ////
+      width: fit-content;
+      span {
+        display: block;
+      }
+    }
+
+    &_title {
+      ////////  デザイン  ////////
+      width: fit-content;
+      letter-spacing: 0.3rem;
+      // レスポンシブ →→
+      @include mixin.pad {
+        line-height: 0.9;
+        font-size: 3.5rem;
+        letter-spacing: 0.1em;
+      }
+      @include mixin.mobile {
+        font-size: 4rem;
+      }
+      span {
+        display: block;
+      }
+      ////  配置  ////
+      margin-top: 3.2%;
+    }
+  }
+  /* ======================================================
+# VISION
+======================================================= */
+  &-policy {
+    &_container {
+      ////////  デザイン  ////////
+      @include mixin.container;
+      ////  配置  ////
+      margin-top: 8.3%;
+    }
+
+    &_textbox {
+      ////////  デザイン  ////////
+      width: 28%;
+      margin-left: 20.5%;
+      ////  配置  ////
+      margin-right: auto;
+    }
+
+    &_title {
+    }
+
+    &_subtitle {
+      ////////  デザイン  ////////
+      letter-spacing: -0.14em;
+      ////  配置  ////
+      margin-top: 7.5%;
+    }
+
+    &_text {
+      ////  配置  ////
+      margin-top: 7%;
+      // 文節毎の空白
+      span {
+        display: block;
+        margin-top: 10.5%;
+      }
+    }
+  }
+  /* ======================================================
+  # CEO MESSAGE
+  ======================================================= */
+  &_message {
+
+    
+  }
+  /* ======================================================
+  # COMPANY
+  ======================================================= */
+  &-company {
+    &_container {
+      ////////  デザイン  ////////
+      @include mixin.container;
+      padding-top: 4.2%;
+      padding-bottom: 4.2%;
+      // レスポンシブ →→
+      @include mixin.pad {
+        padding-top: 5.8%;
+        padding-left: 3.8%;
+        padding-right: 3.8%;
+        padding-bottom: 5.8%;
+      }
+      @include mixin.mobile {
+        padding-top: 10.8%;
+      }
+    }
+
+    &_title {
+    }
+
+    &_list {
+      ////////  デザイン  ////////
+      width: 63.63%;
+      // レスポンシブ →→
+      @include mixin.mobile {
+        width: 100%;
+      }
+      ////  配置  ////
+      margin-left: auto;
+      margin-top: 2.7%;
+      // レスポンシブ →→
+      @include mixin.pad {
+        margin-top: 4%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+      @include mixin.mobile {
+        margin-top: 8%;
+      }
+    }
+
+    &_date {
+      ////////  デザイン  ////////
+      font-size: 0.625rem;
+      color: #cecece;
+      font-weight: bold;
+      ////  配置  ////
+      &:nth-of-type(n + 2) {
+        margin-top: 4.6%;
+        // レスポンシブ →→
+        @include mixin.pad {
+          margin-top: 6.2%;
+        }
+      }
+    }
+    &_text {
+      ////////  デザイン  ////////
+      font-size: 0.875rem;
+      font-weight: bold;
+      color: #333;
+      font-family: variables.$myfont;
+      letter-spacing: -0.09em;
+      font-feature-settings: "palt";
+      border-bottom: solid 1px #ddd;
+      ////  配置  ////
+      margin-top: 1.3%;
+      padding-bottom: 0.6%;
+      // レスポンシブ →→
+      @include mixin.pad {
+        margin-top: 2%;
+        padding-bottom: 2%;
+      }
+      @include mixin.mobile {
+        margin-top: 3%;
+        padding-bottom: 8%;
+      }
+    }
+
+    &_google-map {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 32.7%;
+      position: relative;
+    }
+    &_googlemap iframe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

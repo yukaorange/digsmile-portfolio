@@ -17,7 +17,7 @@
     // サイズ
     margin-left: auto;
     margin-right: auto;
-    // 配置
+    /// 配置 ///
     z-index: 100;
     // 要素配置
     display: flex;
@@ -26,46 +26,79 @@
   }
 
   &_logo {
-    // デザイン
+    ////  デザイン ////
     width: 260px;
     height: 28.2px;
     object-fit: contain;
-    // 配置
+    transition: 0.2s;
+    @include mixin.pad{
+    width: 189px;
+    height: 20.6px;
+    }
+    /// 配置 ///
     display: block;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 58px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 4%;
+    @include mixin.pad{
+    margin-left: 4%;
+    margin-top: 3.5%;
+    }
+    &.scrollColor {
+      filter: brightness(0.17);
+    }
   }
 
   &_btn {
-    // 配置
+    /// 配置 ///
     display: block;
     position: absolute;
     z-index: 300;
     right: 7%;
     top: 26%;
-    // デザイン
+    // レスポンシブ →→
+    @include mixin.pad{
+    right: 10%;
+    }
+    @include mixin.mobile{
+    right: 5%;
+    }
+    ////  デザイン ////
     width: 40px;
     height: 40px;
-    cursor: pointer;
     text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
     // 「MENU」の文字
     &::after {
       content: "MENU";
       color: variables.$white;
-      // デザイン
+      ////  デザイン ////
       height: 40px;
       width: fit-content;
-      // 配置
+      // レスポンシブ →→
+      @include mixin.mobile{
+      display: none;
+      }
+      /// 配置 ///
       position: absolute;
       top: 31%;
       transform: translateX(57%);
+    }
+    //一定量スクロールで色変更
+    &.scrollColor {
+      span{
+        background-color: #333;
+      }
+      &::after{
+        color: #333;
+      }
     }
   }
 
   &_nav {
     &-bg {
-      // 配置
+      /// 配置 ///
       position: fixed;
       z-index: 200;
       top: 0;
@@ -73,7 +106,7 @@
       visibility: hidden;
       transform: translateX(100%);
       overflow-y: scroll;
-      // デザイン
+      ////  デザイン ////
       color: #fff;
       background-color: rgba(34, 34, 34, 0.6);
       text-align: center;
@@ -87,7 +120,7 @@
       }
     }
     &-list {
-      // 配置
+      /// 配置 ///
       position: fixed;
       z-index: 200;
       top: 0;
@@ -101,27 +134,30 @@
         visibility: visible;
       }
       // overflow-y: scroll;
-      // デザイン
+      ////  デザイン ////
       color: #fff;
       background-color: rgba(34, 34, 34, 0.95);
       text-align: center;
       width: 30%;
       height: 100%;
       padding-top: 10%;
+      // レスポンシブ →→
+      @include mixin.pad{
+      width: 50%;
+      }
     }
 
     &-logo {
-      // デザイン
+      ////  デザイン ////
       width: 42.1px;
       height: 45px;
-      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-      // 配置
+      /// 配置 ///
       margin-left: auto;
       margin-right: auto;
     }
 
     &-item {
-      margin-top: 1.5rem;
+      margin-top: 5%;
     }
   }
 }

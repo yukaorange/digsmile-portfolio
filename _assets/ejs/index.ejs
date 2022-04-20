@@ -14,10 +14,7 @@
         <h2 class="p-home-about_title">ABOUT US</h2><!-- /.p-home-about_title -->
         <p class="p-home-about_text">
           DIGSMILEは、デザインで人を笑顔にする会社。
-          <span>
-            なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
-          </span>
-          DIGSMILEの社名にはそんな想いが込められています。
+          <span>なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。DIGSMILEの社名にはそんな想いが込められています。</span>
         </p><!-- /.p-home-about_text -->
         <a href="./<%= get_link('about') ;%>" class="p-home-about_btn c-more_btn">READ MORE</a><!-- /.p-home-about_btn -->
       </article><!-- /.p-home-about_textbox -->
@@ -45,10 +42,36 @@
 </section><!-- /.p-home-info -->
 <!-- LATEST TOPICS -->
 <section class="p-home-news">
-<div class="p-home-news_container">
-
-</div><!-- /.p-home-news_container -->
+  <div class="p-home-news_container">
+    <h2 class="p-home-news_title">LATEST TOPICS</h2><!-- /.p-home-news_title -->
+    <dl class="p-home-news_list">
+      <dt class="p-home-news_date"><time datetime="2020-02-01">2020.02.01</time></dt><!-- /.p-home-news_date -->
+      <dd class="p-home-news_text">イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</dd><!-- /.p-home-news_text -->
+      <dt class="p-home-news_date"><time datetime="2020-01-18">2020.01.18</time></dt><!-- /.p-home-news_date -->
+      <dd class="p-home-news_text">プレスリリースのお知らせ DIGGIN’ RECORDS</dd><!-- /.p-home-news_text -->
+      <dt class="p-home-news_date"><time datetime="2020-01-01">2020.01.01</time></dt><!-- /.p-home-news_date -->
+      <dd class="p-home-news_text">新年明けましておめでとうございます</dd><!-- /.p-home-news_text -->
+      <a href="./<%= get_link('topics') ;%>" class="p-home-news_btn c-more_btn">READ MORE</a><!-- /.p-home-news_btn -->
+    </dl><!-- /.p-home-news_list -->
+  </div><!-- /.p-home-news_container -->
 </section><!-- /.p-home-news -->
+<!-- CONTACT -->
+<section class="p-home-contact">
+  <div class="p-home-contact_container">
+    <article class="p-home-contact_list">
+      <div class="p-home-contact_textbox">
+        <h2 class="p-home-contact_title">CONTACT</h2><!-- /.p-home-contact_title -->
+        <p class="p-home-contact_text">
+          制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。<span>まずはお気軽にご連絡ください。担当者から改めて返信いたします。</span>
+        </p><!-- /.p-home-contact_text -->
+        <a href="./<%= get_link('contact') ;%>" class="p-home-contact_btn c-more_btn">READ MORE</a><!-- /.p-home-contact_btn -->
+      </div><!-- /.p-home-contact_textbox -->
+      <figure class="p-home-contact_image">
+        <img src="./images/home-contact.png" alt="社員の集合写真">
+      </figure><!-- /.p-home-contact_image -->
+    </article><!-- /.p-home-contact_list -->
+  </div><!-- /.p-home-contact_container -->
+</section><!-- /.p-home-contact -->
 
 <!-- フッター -->
 <%- include('./_template/_footer',{pageId:pageId}) ;%>

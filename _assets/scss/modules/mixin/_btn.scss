@@ -11,11 +11,3 @@
     }
   }
 }
-
-@mixin btn-category{
-  padding: 3px 10px;
-  border: solid 1px currentColor;
-  border-radius: 10px;
-  color:variables.$basecolor;
-  font-size: variables.$f6;
-}

@@ -1,61 +1,63 @@
 @use "../variables/variables";
 @use "../mixin/mixin";
 
-
 /* ===============================================
 # 文字
 =============================================== */
 body {
-  font-family: variables.$googlefont;
+  font-family: variables.$myfont;
 }
 
 p {
   font-size: variables.$f5;
-  // letter-spacing: normal;
-  font-weight: 500;
+  letter-spacing: -0.09em;
+  font-feature-settings: "palt";
+  line-height: 2;
+  font-weight: normal;
   color: variables.$black;
   font-family: variables.$myfont;
 }
 
 h1 {
   font-size: variables.$f1;
-  // letter-spacing:normal ;
-  font-weight: 800;
+  letter-spacing: 0.1rem;
+  line-height: 1.21;
+  font-weight: bold;
   color: variables.$white;
 }
 
 h2 {
   font-size: variables.$f2;
-  // letter-spacing: normal;
-  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-weight: bold;
   color: variables.$black;
 }
 
 h3 {
   font-size: variables.$f3;
   // letter-spacing: normal;
-  font-weight: 800;
-  color: variables.$white;
+  font-weight: bold;
+  color: variables.$black;
 }
 
 h4 {
   font-size: variables.$f4;
   // letter-spacing: normal;
-  // font-weight: 500;
+  // font-weight: 400;
   color: variables.$black;
 }
 
 h5 {
   font-size: variables.$f5;
   // letter-spacing: normal;
-  // font-weight: 500;
+  // font-weight: 400;
   color: variables.$black;
 }
 
 h6 {
   font-size: variables.$f6;
   // letter-spacing: normal;
-  // font-weight: 500;
+  // font-weight: 400;
   color: variables.$black;
 }
 
@@ -64,7 +66,7 @@ a {
   line-height: 1.8;
   text-decoration: none;
   // letter-spacing: normal;
-  font-weight: 500;
+  font-weight: 400;
   color: variables.$white;
   cursor: pointer;
   transition: 0.3s;
@@ -88,14 +90,14 @@ li {
 /* ========================================
 # bodyタグ、htmlタグ
 ======================================== */
-html{
+html {
   font-size: 16px;
 
   @include mixin.pad {
-    font-size: 14px;
+    font-size: 16px;
   }
   @include mixin.mobile {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
