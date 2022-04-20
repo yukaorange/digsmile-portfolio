@@ -28,6 +28,9 @@ h1 {
 
 h2 {
   font-size: variables.$f2;
+  @include mixin.mobile{
+  font-size: 2.28rem;
+  }
   letter-spacing: 0.08em;
   font-weight: bold;
   color: variables.$black;
