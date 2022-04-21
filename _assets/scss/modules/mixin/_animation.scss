@@ -1,3 +1,15 @@
 @use "../mixin/media";
 
-
+@mixin arrowmove {
+  @keyframes arrowmove {
+    0% {
+      bottom: 50%;
+    }
+    50% {
+      bottom: 55%;
+    }
+    100% {
+      bottom: 50%;
+    }
+  }
+}

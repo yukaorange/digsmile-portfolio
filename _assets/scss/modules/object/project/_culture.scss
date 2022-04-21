@@ -1,0 +1,169 @@
+@use "../../variables/variables";
+@use "../../mixin/mixin";
+
+.p-culture {
+  $sec: "p-culture";
+  /* ======================================================
+# メインビュー
+======================================================= */
+  &-mv {
+    &_bg {
+      ////////  デザイン  ////////
+      width: 100%;
+      height: 52vh;
+      @include mixin.pad {
+        height: 52.5vh;
+      }
+      @include mixin.mobile {
+        height: 73.1vh;
+      }
+      ////  配置  ////
+      display: flex;
+      position: absolute;
+      z-index: -10;
+    }
+
+    &_image {
+      ////////  デザイン  ////////
+      width: 76.2%;
+      height: 100%;
+      background-image: url(../images/culture-mv.jpg);
+      background-position: center;
+      background-size: cover;
+      // レスポンシブ →→
+      @include mixin.pad {
+        width: 76.4%;
+      }
+      @include mixin.mobile {
+        width: 75.4%;
+      }
+      //薄く影をつける
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.34);
+      }
+      ////  配置  ////
+      z-index: -20;
+      position: relative;
+    }
+
+    &_shadow {
+      ////////  デザイン  ////////
+      width: 54%;
+      height: 62.7vh;
+      background-color: #222;
+      // レスポンシブ →→
+      @include mixin.pad {
+        height: 60.7vh;
+        width: 53%;
+      }
+      @include mixin.mobile {
+        height: 84.8vh;
+      }
+      ////  配置  ////
+      position: absolute;
+      right: 0;
+      z-index: -30;
+    }
+
+    &_container {
+      ////////  デザイン  ////////
+      @include mixin.container;
+      height: 62.7vh;
+      ////  配置  ////
+      position: relative;
+    }
+    @include mixin.mobile {
+      height: 100vh;
+    }
+
+    &_textbox {
+      ////  配置  ////
+      position: absolute;
+      right: 1%;
+      top: 45.5%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column-reverse;
+      // レスポンシブ →→
+      @include mixin.pad {
+        right: 12.8%;
+        top: 41%;
+      }
+      @include mixin.mobile {
+        right: 8.8%;
+        top: 57.5%;
+      }
+    }
+
+    &_subtitle {
+      ////////  デザイン  ////////
+      color: #ffffff;
+      font-weight: bold;
+      font-family: variables.$myfont;
+      line-height: 1.8;
+      font-size: 1.25rem;
+      // レスポンシブ →→
+      @include mixin.pad {
+        font-size: 1rem;
+      }
+      @include mixin.mobile {
+        font-size: 1.2rem;
+      }
+      ////  配置  ////
+      width: fit-content;
+      span {
+        display: block;
+      }
+    }
+
+    &_title {
+      ////////  デザイン  ////////
+      width: fit-content;
+      letter-spacing: 0.3rem;
+      // レスポンシブ →→
+      @include mixin.pad {
+        line-height: 0.9;
+        font-size: 3.5rem;
+        letter-spacing: 0.01em;
+      }
+      @include mixin.mobile {
+        font-size: 3.7rem;
+        letter-spacing: -0.01em;
+      }
+      span {
+        display: block;
+      }
+      ////  配置  ////
+      margin-top: 3.2%;
+    }
+  }
+  /* ======================================================
+# PORTFOLIO
+======================================================= */
+  &-portfolio {
+    &_container {
+      ////////  デザイン  ////////
+      @include mixin.container;
+      ////  配置  ////
+      margin-top: 8.3%;
+    }
+    &_list{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &_item {
+      padding: 5% 5% 5% 5%;
+      width: 50%;
+      @include mixin.mobile{
+      width: 100%;
+      }
+    }
+    &_image {
+      width: 70%;
+    }
+  }
+}

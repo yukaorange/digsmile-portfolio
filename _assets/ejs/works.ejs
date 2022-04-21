@@ -1,0 +1,48 @@
+<% let pageId  = 'works' ;%>
+<% function get_link(select){
+  return jsonData.pages[select].url
+}  ;%>
+<!-- ヘッダー -->
+<%- include('./_template/_header',{pageId:pageId}) ;%>
+<!-- MV -->
+<%- include('./_template/_mv',{pageId:pageId}) ;%>
+
+<!-- 準備中 -->
+<section class="p-works-portfolio">
+  <div class="p-works-portfolio_container">
+    <h2 class="p-works-portfolio_title">PORTFOLIO</h2><!-- /.p-works-portfolio_title -->
+    <ul class="p-works-portfolio_list">
+      <li class="p-works-portfolio_item">
+        <figure class="p-works-portfolio_image">
+          <img src="./images/works-working.jpg" alt="鋭意作成中">
+        </figure><!-- /.p-works-portfolio_iamge -->
+        <h3 class="p-works-portfolio_text">COMING SOON ...</h3><!-- /.p-works-portfolio_text -->
+        <p class="p-works-portfolio_text">鋭意作成中です。</p><!-- /.p-works-portfolio_text -->
+      </li><!-- /.p-works-portfolio_text -->
+      <li class="p-works-portfolio_item">
+        <figure class="p-works-portfolio_image">
+          <img src="./images/works-working.jpg" alt="鋭意作成中">
+        </figure><!-- /.p-works-portfolio_iamge -->
+        <h3 class="p-works-portfolio_text">COMING SOON ...</h3><!-- /.p-works-portfolio_text -->
+        <p class="p-works-portfolio_text">鋭意作成中です。</p><!-- /.p-works-portfolio_text -->
+      </li><!-- /.p-works-portfolio_text -->
+      <li class="p-works-portfolio_item">
+        <figure class="p-works-portfolio_image">
+          <img src="./images/works-working.jpg" alt="鋭意作成中">
+        </figure><!-- /.p-works-portfolio_iamge -->
+        <h3 class="p-works-portfolio_text">COMING SOON ...</h3><!-- /.p-works-portfolio_text -->
+        <p class="p-works-portfolio_text">鋭意作成中です。</p><!-- /.p-works-portfolio_text -->
+      </li><!-- /.p-works-portfolio_text -->
+      <li class="p-works-portfolio_item">
+        <figure class="p-works-portfolio_image">
+          <img src="./images/works-working.jpg" alt="鋭意作成中">
+        </figure><!-- /.p-works-portfolio_iamge -->
+        <h3 class="p-works-portfolio_text">COMING SOON ...</h3><!-- /.p-works-portfolio_text -->
+        <p class="p-works-portfolio_text">鋭意作成中です。</p><!-- /.p-works-portfolio_text -->
+      </li><!-- /.p-works-portfolio_text -->
+    </ul><!-- /.p-works-portfolio_list -->
+  </div><!-- /.p-works-portfolio_container -->
+</section><!-- /.p-works-portfolio -->
+
+<!-- フッター -->
+<%- include('./_template/_footer',{pageId:pageId}) ;%>

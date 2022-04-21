@@ -1,6 +1,14 @@
 @use "../../variables/variables";
 @use "../../mixin/mixin";
 
+/* ======================================================
+# inputタグオートコンプリート時の色の変化をなくす
+======================================================= */
+/* box-shadow:水平方向の距離 垂直方向の距離 ぼかし距離 広がり距離 影の色 inset;*/
+input:-webkit-autofill{
+	box-shadow: 0 0 0px 1000px #ffffff inset;
+}
+
 .p-contact {
   $sec: "p-contact";
   /* ======================================================
@@ -284,6 +292,7 @@
       }
     }
     &_message {
+      margin-top: 5%;
       display: none;
       padding: 8px 66px 9px;
       background-color: #000;

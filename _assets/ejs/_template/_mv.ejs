@@ -1,4 +1,9 @@
 <section class="p-<%= pageId ;%>-mv">
+  <% if(pageId == "home"){ %>
+  <div class="c-scroll-down"><span>Scroll</span></div>
+  <% }else if(pageId == "contact"){ %>
+  <div class="c-scroll-down"><span>CONTACT FORM</span></div>
+  <% } %>
   <div class="p-<%= pageId ;%>-mv_bg">
     <div class="p-<%= pageId ;%>-mv_image scroll-checkPoint1">
       <!-- 写真背景の空要素 -->

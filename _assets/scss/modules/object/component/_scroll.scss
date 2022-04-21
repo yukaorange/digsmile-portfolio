@@ -1,0 +1,45 @@
+@use "../../variables/variables";
+@use "../../mixin/mixin";
+
+/* ====================================================
+# スクロールアイコン
+======================================================= */
+.c-scroll-down {
+  ////////////  デザイン  ////////////
+  span {
+    /*テキストの形状*/
+    color: #eee;
+    letter-spacing: 0.05em;
+    /*縦書き*/
+    writing-mode: vertical-rl;
+  }
+  ////////  配置  ////////
+  position: absolute;
+  left: 10%;
+  /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 2s ease-in-out infinite;
+  @include mixin.arrowmove;
+
+  ////////// 矢印//////////////
+  &::before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: -75px;
+    right: 7px;
+    width: 3px;
+    height: 17px;
+    background: #eee;
+    transform: skewX(-31deg);
+  }
+  &::after {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: -75px;
+    right: 12px;
+    width: 3px;
+    height: 68px;
+    background: #eee;
+  }
+}
