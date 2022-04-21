@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<%= description ;%>">
+  <meta name="robots" content="noindex">
   <title><%= title ;%>|デザインで人を笑顔にする会社</title>
   <!-- ファビコン -->
   <link rel="icon" href="./images/favicon.svg" />
@@ -21,32 +22,7 @@
 <body>
   <!-- loading画面 -->
   <div id="c-loading" class="c-loading">
-    <div class="loader">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-
-    <div class="loader loader--reflect">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-
+    
   </div>
   <!-- コンテンツ -->
   <header class="l-header">
@@ -69,11 +45,11 @@
           <% for(let page in jsonData.pages){ %>
           <% if(page === "home"){ %>
           <li class="l-header_nav-logo">
-            <a href='./<%= jsonData.pages[page].url %>'><img src="./images/logo-icon.svg" alt="サイトロゴ"></a>
+            <a href="./<%= jsonData.pages[page].url %>'><img src=./images/logo-icon.svg" alt="サイトロゴ"></a>
           </li><!-- /.l-header_nav-list -->
           <% }else{ %>
           <li class="l-header_nav-item">
-            <a href='./<%= jsonData.pages[page].url %>'><%= jsonData.pages[page].name %></a>
+            <a href="./<%= jsonData.pages[page].url %>"><%= jsonData.pages[page].name %></a>
           </li><!-- /.l-header_nav-item -->
           <% }%>
           <% };%>
