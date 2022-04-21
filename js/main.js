@@ -38,3 +38,66 @@ $(window).on("scroll", function () {
   }
   // console.log(shadowHeight);
 });
+
+//===========================
+//フォーム送信モジュール
+//===========================
+//非同期通信 & 送信後の挙動//
+$('#p-contact-form').submit(function (event) {
+  let formData = $('#form').serialize();
+  $.ajax({
+    url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfAzt2h5oM0nMrxGChjvql_Mhbwt5oGrahHngg6n3ObQv5l7A/formResponse",//formタグのaction属性と同じ値
+    data: formData,
+    type: "POST",
+    dataType: "xml",
+    statusCode: {
+      0: function () {
+        $(".p-contact-form_message").slideUp("slow");
+        $(".p-contact-form_submit").fadeOut("fast");
+      }//送信成功後のメッセージ
+      
+      // 200: function () {
+      //   $(".p-contact-form_false").slideDown();
+      // }//送信失敗時に表示するメッセージ
+    }
+  });
+  event.preventDefault();
+});
+
+//===========================
+//フォームバリデーション
+//===========================
+
+const submit = $('.p-contact-form_submit');
+
+// 必須テキスト↓↓
+$('#p-contact-form input,#p-contact-form textarea').change(function () {
+  if (
+    $('#p-contact-form input[id="name"]').val() !== "" &&
+    $('#p-contact-form input[type="email"]').val() !== "" &&
+    $('#p-contact-form textarea[id="textarea"]').val() !== "" &&
+    $('#p-contact-form input[name="radio"]').prop('checked') === true 
+    ) {
+      submit.prop('disabled', false);
+      submit.removeClass("_disabled")
+    }else{
+      submit.prop('disabled',true);
+      submit.addClass("_disabled")
+    }
+  });
+// ラジオボタン↓↓
+$('#p-contact-form input,#p-contact-form textarea').change(function () {
+  if (
+    $('#p-contact-form input[id="request"]').prop('checked') === true ||
+    $('#p-contact-form input[id="recruit"]').prop('checked') === true ||
+    $('#p-contact-form input[id="ir"]').prop('checked') === true ||
+    $('#p-contact-form input[id="other"]').prop('checked') === true
+    ) {
+      submit.prop('disabled', false);
+      submit.removeClass("_disabled")
+    }else{
+      submit.prop('disabled',true);
+      submit.addClass("_disabled")
+    }
+  });
+

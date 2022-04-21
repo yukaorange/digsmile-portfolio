@@ -333,8 +333,11 @@ progress {
 /* ===============================================
 # メディアクエリ一覧
 =============================================== */
+/* ======================================================
+# タイトルの装飾
+======================================================= */
 /* ========================================
-# テキストの装飾
+# インプットタグの装飾
 ======================================== */
 /* ========================================
 # アイコンの付与
@@ -349,8 +352,6 @@ body {
 p {
   font-size: 1rem;
   letter-spacing: -0.09em;
-  -webkit-font-feature-settings: "palt";
-          font-feature-settings: "palt";
   line-height: 2;
   font-weight: normal;
   color: #333333;
@@ -1675,21 +1676,12 @@ img {
   width: 100%;
 }
 
-/* ======================================================
-# 
-======================================================= */
 .p-contact {
   /* ======================================================
   # メインビュー
   ======================================================= */
   /* ======================================================
-  # VISION
-  ======================================================= */
-  /* ======================================================
-  # CEO MESSAGE
-  ======================================================= */
-  /* ======================================================
-  # COMPANY
+  # FORM
   ======================================================= */
 }
 .p-contact-mv_bg {
@@ -1700,6 +1692,16 @@ img {
   display: flex;
   position: absolute;
   z-index: -10;
+}
+@media screen and (max-width: 1024px) {
+  .p-contact-mv_bg {
+    height: 52.5vh;
+  }
+}
+@media screen and (max-width: 599px) {
+  .p-contact-mv_bg {
+    height: 73.1vh;
+  }
 }
 .p-contact-mv_image {
   width: 76.2%;
@@ -1712,7 +1714,12 @@ img {
 }
 @media screen and (max-width: 1024px) {
   .p-contact-mv_image {
-    width: 78%;
+    width: 76.4%;
+  }
+}
+@media screen and (max-width: 599px) {
+  .p-contact-mv_image {
+    width: 75.4%;
   }
 }
 .p-contact-mv_image::before {
@@ -1732,7 +1739,13 @@ img {
 }
 @media screen and (max-width: 1024px) {
   .p-contact-mv_shadow {
-    width: 73%;
+    height: 60.7vh;
+    width: 53%;
+  }
+}
+@media screen and (max-width: 599px) {
+  .p-contact-mv_shadow {
+    height: 84.8vh;
   }
 }
 .p-contact-mv_container {
@@ -1742,6 +1755,11 @@ img {
   margin-right: auto;
   height: 62.7vh;
   position: relative;
+}
+@media screen and (max-width: 599px) {
+  .p-contact-mv {
+    height: 100vh;
+  }
 }
 .p-contact-mv_textbox {
   position: absolute;
@@ -1759,14 +1777,14 @@ img {
 }
 @media screen and (max-width: 1024px) {
   .p-contact-mv_textbox {
-    right: 9.2%;
-    top: 43.8%;
+    right: 12.8%;
+    top: 41%;
   }
 }
 @media screen and (max-width: 599px) {
   .p-contact-mv_textbox {
-    right: 3.8%;
-    top: 43%;
+    right: 8.8%;
+    top: 57.5%;
   }
 }
 .p-contact-mv_subtitle {
@@ -1803,175 +1821,205 @@ img {
   .p-contact-mv_title {
     line-height: 0.9;
     font-size: 3.5rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.01em;
   }
 }
 @media screen and (max-width: 599px) {
   .p-contact-mv_title {
-    font-size: 4rem;
+    font-size: 3.7rem;
+    letter-spacing: -0.01em;
   }
 }
 .p-contact-mv_title span {
   display: block;
 }
-.p-contact-policy_container {
+.p-contact-form {
+  /* ======================================================
+  # ラジオボタン
+  ======================================================= */
+  /* ======================================================
+  # 会社名・団体名
+  ======================================================= */
+  /* ======================================================
+  # お名前
+  ======================================================= */
+  /* ======================================================
+  # email
+  ======================================================= */
+  /* ======================================================
+  # tel
+  ======================================================= */
+  /* ======================================================
+      # お問い合わせ内容
+  ======================================================= */
+  /* ======================================================
+  # PRIVACY POLICY
+  ======================================================= */
+  /* ======================================================
+  # 個人情報の取り扱いについて同意のうえ送信します。
+  ======================================================= */
+  /* ======================================================
+  # 送信ボタン
+  ======================================================= */
+}
+.p-contact-form_container {
   max-width: calc(1100px + 2rem);
   padding: 0 1rem;
   margin-left: auto;
   margin-right: auto;
+  color: #333333;
+  max-width: calc(700px + 2rem);
   margin-top: 8.3%;
+  margin-bottom: 8.3%;
 }
-.p-contact-policy_textbox {
-  width: 28%;
-  margin-left: 20.5%;
-  margin-right: auto;
+.p-contact-form_radio {
+  margin-top: 5%;
 }
-.p-contact-policy_subtitle {
-  letter-spacing: -0.14em;
-  margin-top: 7.5%;
-}
-.p-contact-policy_text {
-  margin-top: 7%;
-}
-.p-contact-policy_text span {
-  display: block;
-  margin-top: 10.5%;
-}
-.p-contact-message_container {
-  max-width: calc(1100px + 2rem);
-  padding: 0 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 9%;
+.p-contact-form_radio-text::after {
+  content: "必須";
+  font-size: 0.75rem;
+  padding: 0.5% 0.85% 0.5% 0.5%;
+  color: #ffffff;
+  background-color: #333;
   position: relative;
+  left: 3%;
+  top: -0.1875rem;
+  letter-spacing: normal;
 }
-.p-contact-message_image {
-  width: 37.2%;
-  position: absolute;
-}
-.p-contact-message_textbox {
-  width: 70%;
-  background-color: #f0f0f0;
-  padding-top: 11%;
-  padding-bottom: 8.5%;
-  padding-left: 17%;
-  padding-right: 17%;
-  margin-top: 13%;
-  margin-left: auto;
-}
-.p-contact-message_text {
-  margin-top: 7%;
-}
-.p-contact-message_text span {
-  display: block;
-  margin-top: 8%;
-}
-.p-contact-company_container {
-  max-width: calc(1100px + 2rem);
-  padding: 0 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 4.2%;
-  padding-bottom: 9.2%;
-}
-@media screen and (max-width: 1024px) {
-  .p-contact-company_container {
-    padding-top: 5.8%;
-    padding-left: 3.8%;
-    padding-right: 3.8%;
-    padding-bottom: 9.2%;
-  }
-}
-@media screen and (max-width: 599px) {
-  .p-contact-company_container {
-    padding-top: 10.8%;
-  }
-}
-.p-contact-company_title {
-  border-bottom: solid 1px #ddd;
-  padding-bottom: 2.5%;
-}
-.p-contact-company_list {
-  width: 72.63%;
+.p-contact-form_radio-list {
+  font-family: "Noto Sans JP";
+  margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: auto;
-  margin-top: 1.6%;
+  gap: 7%;
 }
-@media screen and (max-width: 599px) {
-  .p-contact-company_list {
-    width: 100%;
-  }
+.p-contact-form_group {
+  margin-top: 5%;
 }
-@media screen and (max-width: 1024px) {
-  .p-contact-company_list {
-    margin-top: 4%;
-    margin-left: 0;
-    margin-right: auto;
-  }
-}
-@media screen and (max-width: 599px) {
-  .p-contact-company_list {
-    margin-top: 8%;
-  }
-}
-.p-contact-company_term {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  letter-spacing: 0.06em;
-  -webkit-font-feature-settings: "palt";
-          font-feature-settings: "palt";
-  border-bottom: solid 1px #ddd;
-  width: 18%;
-  padding-bottom: 2%;
-}
-.p-contact-company_term:nth-of-type(n+2) {
-  margin-top: 1.8%;
-}
-.p-contact-company_desc {
-  font-size: 1rem;
-  font-weight: normal;
-  color: #333;
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
-  letter-spacing: 0.06em;
-  -webkit-font-feature-settings: "palt";
-          font-feature-settings: "palt";
-  border-bottom: solid 1px #ddd;
-  width: 82%;
-  padding-bottom: 2%;
-}
-.p-contact-company_desc:nth-of-type(n+2) {
-  margin-top: 1.8%;
-}
-@media screen and (max-width: 1024px) {
-  .p-contact-company_desc {
-    margin-top: 2%;
-    padding-bottom: 2%;
-  }
-}
-@media screen and (max-width: 599px) {
-  .p-contact-company_desc {
-    margin-top: 3%;
-    padding-bottom: 8%;
-  }
-}
-.p-contact-company_google-map {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 32.7%;
-  position: relative;
-  margin-top: 3%;
-}
-.p-contact-company_googlemap iframe {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
+.p-contact-form_group input {
+  border: solid 1px #333;
+  background-color: #fff;
+  height: 40px;
   width: 100%;
+  margin-top: 1%;
+}
+.p-contact-form_name {
+  margin-top: 5%;
+}
+.p-contact-form_name-label::after {
+  content: "必須";
+  font-size: 0.75rem;
+  padding: 0.5% 0.85% 0.5% 0.5%;
+  color: #ffffff;
+  background-color: #333;
+  position: relative;
+  left: 3%;
+  top: -0.1875rem;
+  letter-spacing: normal;
+}
+.p-contact-form_name input {
+  border: solid 1px #333;
+  background-color: #fff;
+  height: 40px;
+  width: 100%;
+  margin-top: 1%;
+}
+.p-contact-form_email {
+  margin-top: 5%;
+}
+.p-contact-form_email-label::after {
+  content: "必須";
+  font-size: 0.75rem;
+  padding: 0.5% 0.85% 0.5% 0.5%;
+  color: #ffffff;
+  background-color: #333;
+  position: relative;
+  left: 3%;
+  top: -0.1875rem;
+  letter-spacing: normal;
+}
+.p-contact-form_email input {
+  border: solid 1px #333;
+  background-color: #fff;
+  height: 40px;
+  width: 100%;
+  margin-top: 1%;
+}
+.p-contact-form_tel {
+  margin-top: 5%;
+}
+.p-contact-form_tel input {
+  border: solid 1px #333;
+  background-color: #fff;
+  height: 40px;
+  width: 100%;
+  margin-top: 1%;
+}
+.p-contact-form_textarea {
+  margin-top: 5%;
+}
+.p-contact-form_textarea-label::after {
+  content: "必須";
+  font-size: 0.75rem;
+  padding: 0.5% 0.85% 0.5% 0.5%;
+  color: #ffffff;
+  background-color: #333;
+  position: relative;
+  left: 3%;
+  top: -0.1875rem;
+  letter-spacing: normal;
+}
+.p-contact-form_textarea textarea {
+  border: solid 1px #333;
+  background-color: #fff;
+  height: 40px;
+  width: 100%;
+  margin-top: 1%;
+  height: 212px;
+}
+.p-contact-form_privacy {
+  margin-top: 5%;
+}
+.p-contact-form_privacy-label {
+  font-weight: bold;
+}
+.p-contact-form_privacy-textbox {
+  width: 100%;
+  height: 252px;
+  padding: 1%;
+  border: solid 1px #333;
+  overflow-y: scroll;
+}
+.p-contact-form_privacy-text span {
+  display: block;
+  margin-top: 5%;
+}
+.p-contact-form_checkbox {
+  margin-top: 5%;
+  text-align: center;
+}
+.p-contact-form_submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 66px 9px;
+  background-color: #000;
+  color: #ffffff;
+  margin-top: 5%;
+}
+.p-contact-form_submit._disabled {
+  opacity: 0.4;
+}
+.p-contact-form_message {
+  display: none;
+  padding: 8px 66px 9px;
+  background-color: #000;
+  color: #ffffff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=style.css.map */

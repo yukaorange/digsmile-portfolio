@@ -4,28 +4,17 @@
 # アイコンの付与
 ======================================== */
 
-// カテゴリーのdashicon
-@mixin icon-category {
-  content: "\f318";
-  font-family: "dashicons";
-  color: variables.$basecolor;
-  font-size: variables.$f2;
-  line-height: 1;
+// 「必須」の注意書き
+@mixin attention {
+  &::after {
+    content: "必須";
+    font-size: 0.75rem;
+    padding: 0.5% 0.85% 0.5% 0.5%;
+    color: #ffffff;
+    background-color: #333;
+    position: relative;
+    left: 3%;
+    top: -0.1875rem;
+    letter-spacing: normal;
+  }
 }
-// 前の記事へ、のアイコン
-@mixin icon-prev {
-  content: "\f141";
-  font-family: "dashicons";
-  color: variables.$basecolor;
-  font-size: variables.$f2;
-  line-height: 1;
-}
-// 次の記事へ、のアイコン
-@mixin icon-next {
-  content: "\f139";
-  font-family: "dashicons";
-  color: variables.$basecolor;
-  font-size: variables.$f2;
-  line-height: 1;
-}
-

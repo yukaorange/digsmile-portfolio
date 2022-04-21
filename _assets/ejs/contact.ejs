@@ -7,70 +7,105 @@
 <!-- MV -->
 <%- include('./_template/_mv',{pageId:pageId}) ;%>
 
-<!-- VISION -->
-<section class="p-about-policy">
-  <div class="p-about-policy_container">
-    <article class="p-about-policy_textbox">
-      <h2 class="p-about-policy_title">VISION</h2><!-- /.p-about-policy_title -->
-      <h3 class="p-about-policy_subtitle">デザインで人を笑顔にする会社</h3><!-- /.p-about-policy_text -->
-      <p class="p-about-policy_text">
-        私達のデザインで人が笑顔になる。
-        <span> そんなデザインを目指しています。</span>
-        <span> 私達が考える人を笑顔にできるデザインとは、
-          デザインが課題を適切に解決ができているかどうか。 </span>
-        <span> ビジュアルだけではなく、<br>
-          本当に求められているものは何かを考え抜いて、<br>
-          デザインしていきたい。</span>
-        <span> 誰かの幸せを創ることも、<br>
-          世界の常識を変えていくことだってできる。</span>
-        <span> 私達はデザインの力を信じています。</span>
-      </p><!-- /.p-about-policy_text -->
-    </article><!-- /.p-about-policy_textbox -->
-  </div><!-- /.p-about-policy_container -->
-</section><!-- /.p-about-policy -->
-<!-- CEO MESSAGE -->
-<section class="p-about-message">
-  <div class="p-about-message_container">
-    <figure class="p-about-message_image">
-      <img src="./images/about-message.png" alt="社長のメッセージを解説中の女性">
-    </figure><!-- /.p-about-message_image -->
-    <article class="p-about-message_textbox">
-      <h2 class="p-about-message_title">CEO MESSAGE</h2><!-- /.p-about-message_title -->
-      <p class="p-about-message_text">
-        良いデザインは人を幸せにする。
-        <span> 私達はそう信じています。</span>
-        <span>
-          デザインを通して、ビジネスの課題とユーザーの課題を解決することで、世の中を幸せにしていきたい。</span>
-        <span> 現在はあらゆるプロダクトがデジタル化されており、デザイナーに対する需要はますます高まっています。それとともに、期待される役割も幅広くなりつつあります。</span>
-        <span> クリエイティブで社会の可能性を切り開いていく。</span>
-        <span> 変化の激しい現代、私達はデザインの力で社会を良い方向に変革していく企業を目指していきます。</span>
-      </p><!-- /.p-about-message_text -->
-    </article><!-- /.p-about-message_textbox -->
-  </div><!-- /.p-about-message_container -->
-</section><!-- /.p-about-message -->
-<!-- COMPANY -->
-<section class="p-about-company">
-  <div class="p-about-company_container">
-    <h2 class="p-about-company_title">COMPANY</h2><!-- /.p-about-company_title -->
-    <dl class="p-about-company_list">
-      <dt class="p-about-company_term">社名</dt><!-- /.p-about-company_term -->
-      <dd class="p-about-company_desc">株式会社DIGSMILE</dd><!-- /.p-about-company_desc -->
-      <dt class="p-about-company_term">代表取締役</dt><!-- /.p-about-company_term -->
-      <dd class="p-about-company_desc"><%= jsonData.siteInfo.author ;%></dd><!-- /.p-about-company_desc -->
-      <dt class="p-about-company_term">設立</dt><!-- /.p-about-company_term -->
-      <dd class="p-about-company_desc"><%= jsonData.siteInfo.establish ;%></dd><!-- /.p-about-company_desc -->
-      <dt class="p-about-company_term">資本金</dt><!-- /.p-about-company_term -->
-      <dd class="p-about-company_desc">1万円</dd><!-- /.p-about-company_desc -->
-      <dt class="p-about-company_term">所在地</dt><!-- /.p-about-company_term -->
-      <dd class="p-about-company_desc"><%= jsonData.siteInfo.place ;%></dd><!-- /.p-about-company_desc -->
-      <dt class="p-about-company_term">電話番号</dt><!-- /.p-about-company_term -->
-      <dd class="p-about-company_desc"><%= jsonData.siteInfo.tel ;%></dd><!-- /.p-about-company_desc -->
-    </dl><!-- /.p-about-company_list -->
-    <div class="p-about-company_google-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.3117311335195!2d139.70119185071422!3d35.693945736784976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd99bfa9a57%3A0xf91eebb5b90ddb36!2z5paw5a6_5Yy65b255omA!5e0!3m2!1sja!2sjp!4v1650417170586!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div><!-- /.p-about-company_google-map -->
-  </div><!-- /.p-about-company_container -->
-</section><!-- /.p-about-company -->
+<!-- FORM -->
+<section class="p-contact-form" id="p-contact-form">
+  <div class="p-contact-form_container">
+    <p class="p-contact-form_text">ご依頼やご相談についてのご質問やご要望がございましたら、下記フォームよりお気軽にお問い合わせください。送付いただいた内容を確認の上、担当者からご連絡させていただきます。</p>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfAzt2h5oM0nMrxGChjvql_Mhbwt5oGrahHngg6n3ObQv5l7A/formResponse" class="p-contact-form_form" id="form">
+      <div class="p-contact-form_radio">
+        <p class="p-contact-form_radio-text">お問い合わせ種別</p><!-- /.p-contact-form_radio-text -->
+        <ul class="p-contact-form_radio-list">
+          <li class="p-contact-form_radio-item">
+            <input type="radio" id="request" value="制作依頼" name="entry.231312932" required>
+            <label for="request">制作依頼</label>
+          </li><!-- /.p-contact-form_radio-item -->
+          <li class="p-contact-form_radio-item">
+            <input type="radio" id="recruit" value="採用" name="entry.231312932">
+            <label for="recruit">採用</label>
+          </li><!-- /.p-contact-form_radio-item -->
+          <li class="p-contact-form_radio-item">
+            <input type="radio" id="ir" value="IR" name="entry.231312932">
+            <label for="ir">IR</label>
+          </li><!-- /.p-contact-form_radio-item -->
+          <li class="p-contact-form_radio-item">
+            <input type="radio" id="other" value="その他" name="entry.231312932">
+            <label for="other">その他</label>
+          </li><!-- /.p-contact-form_radio-item -->
+        </ul><!-- /.p-contact-form_radio-checkbutton -->
+      </div><!-- /.p-contact-form_radio-box -->
+      <div class="p-contact-form_group">
+        <label for="group" class="p-contact-form_group-label">会社名・団体名</label>
+        <input type="text" id="group" name="entry.2018688630">
+      </div>
+      <div class="p-contact-form_name">
+        <label for="name" class="p-contact-form_name-label">お名前</label>
+        <input type="text" id="name" name="entry.1570605445" required>
+      </div>
+      <div class="p-contact-form_email">
+        <label for="email" class="p-contact-form_email-label">メールアドレス</label>
+        <input type="email" id="email" name="entry.998427359" required>
+      </div>
+      <div class="p-contact-form_tel">
+        <label for="text" class="p-contact-form_tel-label">電話番号</label>
+        <input type="tel" id="text" name="entry.942810847"></input>
+      </div>
+      <div class="p-contact-form_textarea">
+        <label for="textarea" class="p-contact-form_textarea-label">お問い合わせ内容</label>
+        <textarea id="textarea" name="entry.1567124511" required></textarea>
+      </div>
+      <article class="p-contact-form_privacy">
+        <p class="p-contact-form_privacy-label">PRIVACY POLICY</p><!-- /.p-contact-form_privacy_label -->
+        <div class="p-contact-form_privacy-textbox">
+          <p class="p-contact-form_privacy-text">
+            個人情報保護方針
+            株式会社DIGSMILE（以下、当社）では、個人情報の重要性を認識し、以下の基準に従って、適切な管理、保護に努めます。
+            <span>
+              1.個人情報の収集、利用
+              当社では、お客様との取引、サービスの提供のために個人情報を適法に収集し、収集した目的の範囲内で、個人情報を利用いたします。
+            </span>
+            <span>
+              2.個人情報の第三者への開示と提供
+              収集したお客様の個人情報は、法的な要請等によらない限り、お客様の承諾を得ない第三者に対して提供・開示はいたしません。
+              業務の都合上、業務委託先に個人情報を提供する場合は、機密保持契約等によって業務委託先に個人情報保護を義務付けるとともに、業務委託先が適切に個人情報を取り扱うように管理いたします。
+            </span>
+            <span>
+              3.個人情報の保護
+              当社では、個人情報の紛失、破壊、改ざん、不正アクセス、および漏えい等を防止するため、適切な対策を行います。
+            </span>
+            <span>
+              4.法令および関連規範の遵守
+              当社は、個人情報の取り扱いに関して、個人情報保護法をはじめとする個人情報に関する法令および関連する規範を遵守します。
+            </span>
+            <span>
+              5.個人情報の開示・訂正・削除
+              当社では、個人情報の開示・訂正・削除等の依頼があった場合、情報提供者本人であることを確認の上、すみやかに対応いたします。
+            </span>
+            <span>
+              法令や当社方針により、プライバシー・ポリシーを予告なく改訂することがあります。
+            </span>
+            <span>
+              お問い合わせ窓口
+              当社の個人情報の取扱いに関するお問い合わせは下記までご連絡お願いいたします。
+              <span>
+                株式会社yukaorange
+              </span>
+            </span>
+          </p><!-- /.p-contact-form_privacy-text -->
+        </div><!-- /.p-contact-form_privacy-text -->
+      </article><!-- /.p-contact-form_privacy -->
+      <div class="p-contact-form_checkbox">
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox" class="p-contact-form_checkbox-label">個人情報の取り扱いについて同意のうえ送信します。</label>
+      </div>
+
+      <input type="submit" class="p-contact-form_submit _disabled" value="送信する"></input>
+
+      <p class="p-contact-form_message">お問い合わせありがとうございました。</p>
+
+    </form>
+  </div>
+</section>
+
 
 <!-- フッター -->
 <%- include('./_template/_footer',{pageId:pageId}) ;%>
